@@ -1,0 +1,9 @@
+{
+  "short_name": "ZerandoManaus",
+  "name": "Zerando Manaus - O Jogo",
+  "start_url": "./index.html",
+  "background_color": "#020617",
+  "theme_color": "#10b981",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zerando Manaus - O Jogo</title>
+  
+  <!-- Configurações PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#10b981">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="device-container">
+
+    <!-- TELA 1: MENU PRINCIPAL -->
+    <section id="screen-menu" class="screen active">
+      <main class="content menu-content">
+        <h1 class="game-title">ZERANDO<br>MANAUS</h1>
+        
+        <div class="menu-actions">
+          <button class="btn btn-primary btn-block" onclick="navigateTo('screen-map')">COMEÇAR</button>
+          <button class="btn btn-secondary btn-block" onclick="navigateTo('screen-how-to-play')">COMO JOGAR</button>
+        </div>
+      </main>
+    </section>
+
+    <!-- TELA 2: COMO JOGAR -->
+    <section id="screen-how-to-play" class="screen">
+      <header class="header">
+        <button class="btn-back" onclick="navigateTo('screen-menu')">← Voltar</button>
+        <h2>Como Jogar</h2>
+      </header>
+
+      <main class="content">
+        <div class="card text-card">
+          <h3>Regras Gerais</h3>
+          <p>
+            Bem-vindo ao <strong>Zerando Manaus</strong>! Sua missão é explorar os pontos turísticos e culturais mais emblemáticos da capital amazonense.
+          </p>
+          <ul>
+            <li>Navegue pelo mapa clicando nos pontos turísticos numerados de 1 a 6.</li>
+            <li>Conclua o desafio de cada local para ganhar Pontos de Experiência (XP).</li>
+            <li>Acompanhe seu nível e progresso de exploração acessando a tela de Perfil.</li>
+          </ul>
+        </div>
+      </main>
+    </section>
+
+    <!-- TELA 3: MAPA MANAUS -->
+    <section id="screen-map" class="screen">
+      <header class="header">
+        <button class="btn-back" onclick="navigateTo('screen-menu')">← Menu</button>
+        <h2>Mapa de Manaus</h2>
+        <button class="btn-icon" onclick="navigateTo('screen-profile')">👤</button>
+      </header>
+
+      <main class="content map-content">
+        <div class="path-container">
+          <!-- Botões em Zigzag com Pontos Turísticos -->
+          <button class="node-btn pos-1" onclick="openLevel(1)" title="Teatro Amazonas">
+            <span class="node-num">1</span>
+            <span class="node-label">Teatro Amazonas</span>
+          </button>
+          <button class="node-btn pos-2" onclick="openLevel(2)" title="Mercado Adolpho Lisboa">
+            <span class="node-num">2</span>
+            <span class="node-label">Mercado Municipal</span>
+          </button>
+          <button class="node-btn pos-3" onclick="openLevel(3)" title="Praia da Ponta Negra">
+            <span class="node-num">3</span>
+            <span class="node-label">Ponta Negra</span>
+          </button>
+          <button class="node-btn pos-4" onclick="openLevel(4)" title="Encontro das Águas">
+            <span class="node-num">4</span>
+            <span class="node-label">Encontro das Águas</span>
+          </button>
+          <button class="node-btn pos-5" onclick="openLevel(5)" title="MUSA - Museu da Amazônia">
+            <span class="node-num">5</span>
+            <span class="node-label">MUSA</span>
+          </button>
+          <button class="node-btn pos-6" onclick="openLevel(6)" title="Ponte Rio Negro">
+            <span class="node-num">6</span>
+            <span class="node-label">Ponte Rio Negro</span>
+          </button>
+        </div>
+      </main>
+    </section>
+
+    <!-- TELA 4: PERFIL DO JOGADOR -->
+    <section id="screen-profile" class="screen">
+      <header class="header">
+        <button class="btn-back" onclick="navigateTo('screen-map')">← Mapa</button>
+        <h2>Perfil do Jogador</h2>
+      </header>
+
+      <main class="content">
+        <div class="profile-header">
+          <div class="avatar">👨‍🌾</div>
+          <h3 id="player-name">Explorador Manauara</h3>
+          <span class="badge">Nível <span id="player-level">1</span></span>
+        </div>
+
+        <div class="card profile-stats">
+          <div class="stat-item">
+            <span>Locais Visitados:</span>
+            <strong id="completed-levels">0 / 6</strong>
+          </div>
+          <div class="stat-item">
+            <span>XP Total:</span>
+            <strong id="player-xp">0 XP</strong>
+          </div>
+          <div class="stat-item">
+            <span>Status da Exploração:</span>
+            <strong id="player-status">Iniciante</strong>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- TELA 5: TELA DE FASE / PONTO TURÍSTICO -->
+    <section id="screen-level" class="screen">
+      <header class="header">
+        <button class="btn-back" onclick="navigateTo('screen-map')">← Mapa</button>
+        <h2 id="level-title">Fase 1</h2>
+      </header>
+
+      <main class="content level-content">
+        <div class="card level-card">
+          <div class="location-badge" id="location-category">História & Cultura</div>
+          <h3 id="location-name">Teatro Amazonas</h3>
+          <p id="location-description">Carregando informações...</p>
+        </div>
+
+        <div class="card text-card challenge-box">
+          <h4>🎯 Desafio Cultural</h4>
+          <p id="location-challenge">Carregando desafio...</p>
+        </div>
+
+        <div class="action-stack">
+          <button class="btn btn-primary btn-block" onclick="completeLevel()">Concluir Desafio (+50 XP)</button>
+        </div>
+      </main>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Registro do Service Worker para PWA (Offline e Instalação no Celular)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => console.log('Service Worker registrado com sucesso.'))
+          .catch((err) => console.error('Falha ao registrar Service Worker:', err));
+      });
+    }
+  </script>
+</body>
+</html>
