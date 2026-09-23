@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zerando Manaus - O Jogo</title>
-  
+  <title>Zerando Manaus - Conhecendo Manaus</title>
+
   <!-- Configurações PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#10b981">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="./src/css/styles.css">
 </head>
+
 <body>
 
   <div class="device-container">
@@ -21,7 +23,7 @@
     <section id="screen-menu" class="screen active">
       <main class="content menu-content">
         <h1 class="game-title">ZERANDO<br>MANAUS</h1>
-        
+
         <div class="menu-actions">
           <button class="btn btn-primary btn-block" onclick="navigateTo('screen-map')">COMEÇAR</button>
           <button class="btn btn-secondary btn-block" onclick="navigateTo('screen-how-to-play')">COMO JOGAR</button>
@@ -40,7 +42,8 @@
         <div class="card text-card">
           <h3>Regras Gerais</h3>
           <p>
-            Bem-vindo ao <strong>Zerando Manaus</strong>! Sua missão é explorar os pontos turísticos e culturais mais emblemáticos da capital amazonense.
+            Bem-vindo ao <strong>Zerando Manaus</strong>! Sua missão é explorar os pontos turísticos e culturais mais
+            emblemáticos da capital amazonense.
           </p>
           <ul>
             <li>Navegue pelo mapa clicando nos pontos turísticos numerados de 1 a 6.</li>
@@ -51,41 +54,75 @@
       </main>
     </section>
 
-    <!-- TELA 3: MAPA MANAUS -->
+    <!-- TELA 3: MAPA DE MANAUS -->
     <section id="screen-map" class="screen">
-      <header class="header">
-        <button class="btn-back" onclick="navigateTo('screen-menu')">← Menu</button>
-        <h2>Mapa de Manaus</h2>
-        <button class="btn-icon" onclick="navigateTo('screen-profile')">👤</button>
+      <header class="map-header">
+        <div class="map-header__nav">
+          <button class="map-header__icon" type="button" onclick="navigateTo('screen-menu')"
+            aria-label="Voltar ao menu">←</button>
+
+          <span class="map-header__brand">ZERANDO <strong>MANAUS</strong> ✦</span>
+
+          <button class="map-header__icon" type="button" onclick="navigateTo('screen-profile')"
+            aria-label="Abrir perfil">♙</button>
+        </div>
+
+        <div class="map-header__intro">
+          <span class="map-header__eyebrow">SUA EXPEDIÇÃO PELA CIDADE</span>
+          <h2>Mapa de Manaus <span aria-hidden="true">✷</span></h2>
+          <p>6 lugares para explorar</p>
+          <div class="map-header__pattern" aria-hidden="true"></div>
+        </div>
       </header>
 
-      <main class="content map-content">
+      <main class="map-content">
         <div class="path-container">
-          <!-- Botões em Zigzag com Pontos Turísticos -->
-          <button class="node-btn pos-1" onclick="openLevel(1)" title="Teatro Amazonas">
-            <span class="node-num">1</span>
-            <span class="node-label">Teatro Amazonas</span>
+          <svg class="map-route" viewBox="0 0 390 760" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M97 223 C97 265 293 263 293 308
+                 S102 350 102 394
+                 S289 440 289 480
+                 S99 521 99 567
+                 S292 607 292 652" />
+          </svg>
+
+          <button class="node-btn pos-1 is-current" type="button" onclick="openLevel(1)">
+            <span class="node-num">01</span>
+            <span class="node-label">Teatro<br>Amazonas</span>
           </button>
-          <button class="node-btn pos-2" onclick="openLevel(2)" title="Mercado Adolpho Lisboa">
-            <span class="node-num">2</span>
-            <span class="node-label">Mercado Municipal</span>
+
+          <button class="node-btn pos-2" type="button" onclick="openLevel(2)">
+            <span class="node-num">02</span>
+            <span class="node-label">Mercado<br>Municipal</span>
           </button>
-          <button class="node-btn pos-3" onclick="openLevel(3)" title="Praia da Ponta Negra">
-            <span class="node-num">3</span>
-            <span class="node-label">Ponta Negra</span>
+
+          <button class="node-btn pos-3" type="button" onclick="openLevel(3)">
+            <span class="node-num">03</span>
+            <span class="node-label">Ponta<br>Negra</span>
           </button>
-          <button class="node-btn pos-4" onclick="openLevel(4)" title="Encontro das Águas">
-            <span class="node-num">4</span>
-            <span class="node-label">Encontro das Águas</span>
+
+          <button class="node-btn pos-4" type="button" onclick="openLevel(4)">
+            <span class="node-num">04</span>
+            <span class="node-label">Encontro<br>das Águas</span>
           </button>
-          <button class="node-btn pos-5" onclick="openLevel(5)" title="MUSA - Museu da Amazônia">
-            <span class="node-num">5</span>
+
+          <button class="node-btn pos-5" type="button" onclick="openLevel(5)">
+            <span class="node-num">05</span>
             <span class="node-label">MUSA</span>
           </button>
-          <button class="node-btn pos-6" onclick="openLevel(6)" title="Ponte Rio Negro">
-            <span class="node-num">6</span>
-            <span class="node-label">Ponte Rio Negro</span>
+
+          <button class="node-btn pos-6" type="button" onclick="openLevel(6)">
+            <span class="node-num">06</span>
+            <span class="node-label">Ponte<br>Rio Negro</span>
           </button>
+
+          <div class="map-selection" aria-live="polite">
+            <span class="map-selection__icon" aria-hidden="true">⌖</span>
+            <div>
+              <small id="map-selected-phase">ETAPA 01 DE 06</small>
+              <strong id="map-selected-name">Teatro Amazonas</strong>
+            </div>
+            <span class="map-selection__arrow" aria-hidden="true">↗</span>
+          </div>
         </div>
       </main>
     </section>
@@ -149,7 +186,7 @@
   </div>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="./src/js/script.js"></script>
   <script>
     // Registro do Service Worker para PWA (Offline e Instalação no Celular)
     if ('serviceWorker' in navigator) {
@@ -161,4 +198,5 @@
     }
   </script>
 </body>
+
 </html>
