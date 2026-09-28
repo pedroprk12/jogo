@@ -1,1 +1,80 @@
-{}
+{
+  "1": {
+    "nome": "Teatro Amazonas",
+    "categoria": "História & Arquitetura",
+    "descricao": "Inaugurado em 1896 durante o Ciclo da Borracha, é o principal símbolo cultural do Amazonas e famoso por sua cúpula com as cores da bandeira do Brasil.",
+    "desafio": "Responda sobre a história do Teatro Amazonas.",
+    "perguntas": [
+      {
+        "enunciado": "(EXEMPLO) Em que ano o Teatro Amazonas foi inaugurado?",
+        "alternativas": ["1822", "1896", "1932", "1967"],
+        "correta": 1
+      }
+    ]
+  },
+  "2": {
+    "nome": "Mercado Municipal Adolpho Lisboa",
+    "categoria": "Gastronomia & Tradição",
+    "descricao": "Inspirado no antigo mercado Les Halles de Paris e às margens do Rio Negro, é o centro de sabores, ervas medicinais e artesanato de Manaus.",
+    "desafio": "Mostre que conhece os sabores do Mercadão.",
+    "perguntas": [
+      {
+        "enunciado": "(EXEMPLO) Em qual mercado de Paris o Adolpho Lisboa foi inspirado?",
+        "alternativas": ["Les Halles", "Marché d'Aligre", "Rungis", "Saint-Germain"],
+        "correta": 0
+      }
+    ]
+  },
+  "3": {
+    "nome": "Praia da Ponta Negra",
+    "categoria": "Lazer & Natureza",
+    "descricao": "Complexo turístico às margens do Rio Negro, famoso pelo seu calçadão de pedras portuguesas, pôr do sol inesquecível e eventos culturais.",
+    "desafio": "Responda sobre a Ponta Negra.",
+    "perguntas": [
+      {
+        "enunciado": "(EXEMPLO) A Praia da Ponta Negra fica às margens de qual rio?",
+        "alternativas": ["Rio Solimões", "Rio Madeira", "Rio Negro", "Rio Tapajós"],
+        "correta": 2
+      }
+    ]
+  },
+  "4": {
+    "nome": "Encontro das Águas",
+    "categoria": "Fenômeno Natural",
+    "descricao": "Fenômeno onde as águas escuras do Rio Negro e as águas barrentas do Rio Solimões correm lado a lado por quilômetros sem se misturar.",
+    "desafio": "Explique o fenômeno do Encontro das Águas.",
+    "perguntas": [
+      {
+        "enunciado": "(EXEMPLO) Quais rios formam o Encontro das Águas?",
+        "alternativas": ["Negro e Solimões", "Negro e Madeira", "Solimões e Purus", "Amazonas e Tapajós"],
+        "correta": 0
+      }
+    ]
+  },
+  "5": {
+    "nome": "MUSA - Museu da Amazônia",
+    "categoria": "Ecoturismo & Ciência",
+    "descricao": "Localizado na Reserva Florestal Adolpho Ducke, possui uma torre de observação de 42 metros de altura acima da copa das árvores.",
+    "desafio": "Responda sobre o MUSA.",
+    "perguntas": [
+      {
+        "enunciado": "(EXEMPLO) Qual a altura da torre de observação do MUSA?",
+        "alternativas": ["22 metros", "32 metros", "42 metros", "52 metros"],
+        "correta": 2
+      }
+    ]
+  },
+  "6": {
+    "nome": "Ponte Rio Negro",
+    "categoria": "Engenharia & Cartão Postal",
+    "descricao": "Com mais de 3,5 km de extensão, conecta Manaus ao município de Iranduba, sendo uma das maiores pontes estaiadas do Brasil.",
+    "desafio": "Responda sobre a Ponte Rio Negro.",
+    "perguntas": [
+      {
+        "enunciado": "(EXEMPLO) A Ponte Rio Negro liga Manaus a qual município?",
+        "alternativas": ["Parintins", "Iranduba", "Itacoatiara", "Manacapuru"],
+        "correta": 1
+      }
+    ]
+  }
+}
